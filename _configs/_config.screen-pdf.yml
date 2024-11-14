@@ -1,0 +1,65 @@
+# Set site.output == "screen-pdf"
+output: "screen-pdf"
+# Set site.image-set == "images/screen-pdf"
+image-set: "images/screen-pdf"
+# Turn off documentation
+collections:
+  docs:
+    output: false
+exclude:
+  # The usual excludes from _config.yml
+  - run-linux.sh
+  - run-mac.command
+  - run-windows.bat
+  - Gemfile
+  - Gemfile.lock
+  - README*
+  - LICENSE*
+  - CHANGELOG*
+  - node_modules
+  - eslint.json
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - CNAME
+  # Exclude files we don't need for screen-pdf
+  - search*
+  - index*
+  - /assets/styles
+  - /assets/*.jpg
+  - /assets/js/accordion.js
+  - /assets/js/annotation.js
+  - /assets/js/elasticlunr-setup.js
+  - /assets/js/elasticlunr.min.js
+  - /assets/js/mark.min.js
+  - /assets/js/mcqs.js
+  - /assets/js/nav.js
+  - /assets/js/render-search-index.js
+  - /assets/js/search-engine.js
+  - /assets/js/search-index.js
+  - /assets/js/search-results.js
+  - /assets/js/search-store.js
+  - /assets/js/search-terms.js
+  - /assets/js/videos.js
+  - /*/package.opf
+  - /*/toc.ncx
+  - /*/styles/print-pdf.scss
+  - /*/styles/web.scss
+  - /*/styles/epub.scss
+  - /*/styles/app.scss
+  - /*/index.md
+  - /*/images/print-pdf
+  - /*/images/web
+  - /*/images/epub
+  - /*/images/app
+# Temporarily exclude these and keep_files them below
+# for faster builds where you don't need to refresh these.
+  # - /assets/fonts
+  # - /book/fonts
+  # - /book/styles
+# Populate the keep_files list for temporary faster builds
+# or to keep previously generated files for other formats.
+keep_files:
+  # - assets/fonts
+  # - book/fonts
+  # - book/styles

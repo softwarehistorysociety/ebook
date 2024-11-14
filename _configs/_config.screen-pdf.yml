@@ -1,0 +1,8 @@
+# Set site.output == "screen-pdf"
+output: "screen-pdf"
+# Set site.image-set == "images/screen-pdf"
+image-set: "images/screen-pdf"
+# Turn off documentation
+collections:
+  docs:
+    output: false

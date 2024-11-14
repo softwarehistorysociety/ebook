@@ -1,0 +1,36 @@
+$pdf-cover: true !default;
+@if $pdf-cover {
+
+    // Cover-page styling. Creates a single-page low-res cover for web PDFs.
+    @page cover-page {
+        margin: 0 0 0 0;
+    }
+
+    .wrapper.cover-page {
+        margin: 0;
+        padding: 0;
+
+        // Add extra verso to retain correct folios
+        page-break-after: left;
+    }
+    p.cover {
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+    }
+    img.cover {
+        height: 100%;
+        max-width: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    // Also see:
+    // _pdf-page-break-tools.scss
+    // _pdf-start-on-recto-and-verso
+
+}

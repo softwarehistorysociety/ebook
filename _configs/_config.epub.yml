@@ -1,0 +1,112 @@
+# Set site.output == "epub"
+output: "epub"
+# Set site.image-set == "images/epub"
+image-set: "images/epub"
+# Turn off documentation and activate epub collection
+collections:
+  docs:
+    output: false
+  api:
+    output: false
+  epub:
+    output: true
+exclude:
+  # The usual excludes from _config.yml
+  - run.js
+  - Gemfile
+  - Gemfile.lock
+  - README*
+  - LICENSE*
+  - CHANGELOG*
+  - node_modules
+  - eslint.json
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - CNAME
+
+  # Included as-is in other files, no need to process
+  - /assets/js/annotation.js
+  - /assets/js/baseline-grid.js
+  - /assets/js/polyfills.js
+  - /assets/js/utilities.js
+  - /assets/js/settings.js
+  - /assets/js/locales.js
+  - /assets/js/setup.js
+  - /assets/js/mark-parents.js
+  - /assets/js/mark.min.js
+  - /assets/js/redact.js
+  - /assets/js/search-store.js
+  - /assets/js/search-terms.js
+  - /assets/js/nav.js
+  - /assets/js/videos.js
+  - /assets/js/mcqs.js
+  - /assets/js/select-list.js
+  - /assets/js/tables.js
+  - /assets/js/footnote-popups.js
+  - /assets/js/show-hide.js
+  - /assets/js/elasticlunr.min.js
+  - /assets/js/elasticlunr-setup.js
+  - /assets/js/svg-management.js
+  - /assets/js/svg-inject.min.js
+  - /assets/js/lazyload.js
+  - /assets/js/accordion.js
+  - /assets/js/heading-titles.js
+  - /assets/js/rotate.js
+  - /assets/js/footnotes.js
+  - /assets/js/shift-elements.js
+  - /assets/js/page-reference.js
+  - /assets/js/bookmarks.js
+
+  # Exclude files we don't need for epub
+  - _api
+  - deploy.sh
+  - fr
+  - netlify.toml
+  - sitemap.xml
+  - test.sh
+  - /assets/fonts
+  - /*/styles/print-pdf.scss
+  - /*/styles/screen-pdf.scss
+  - /*/styles/web.scss
+  - /*/styles/app.scss
+  - /*/styles/*.dic
+  - /*/index.md
+  - /*/images/print-pdf
+  - /*/images/screen-pdf
+  - /*/images/web
+  - /*/images/app
+
+  # Temporarily exclude book files for faster builds
+  # - assets
+  # - book
+  # - samples
+
+# We deliberately empty the keep_files list here,
+# so that files we don't want don't end up in the epub
+# but not in the manifest.
+keep_files:
+  # - assets
+  # - book
+  # - samples
+
+# Map file extensions to media types for the opf
+media-types:
+  html: "application/xhtml+xml"
+  xhtml: "application/xhtml+xml"
+  css: "text/css"
+  jpg: "image/jpeg"
+  jpeg: "image/jpeg"
+  gif: "image/gif"
+  png: "image/png"
+  svg: "image/svg+xml"
+  ttf: "application/font-sfnt"
+  otf: "application/font-sfnt"
+  woff: "application/font-woff"
+  woff2: "font/woff2"
+  mp3: "audio/mpeg"
+  mp4: "audio/mp4"
+  ncx: "application/x-dtbncx+xml"
+  txt: "text/plain"
+  js: "application/javascript"
+  unknown: "application/octet-stream"
